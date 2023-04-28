@@ -6,7 +6,7 @@ class BUTTONS_finger {
     const byte outPin_f[6] = {42, 41, 40, 39, 38, 37}; //declaring output pins for finger buttons moudule
     
                          // j1  j2  j3  j4    
-    const byte inPin_f[4] = {36, 35, 45, 48};  //declaring inputs pins for finger buttons moudule   
+    const byte inPin_f[4] = {45, 48, 47, 21};  //declaring inputs pins for finger buttons moudule   
     
     const byte outPin_f_count = 6;
     const byte inPin_f_count = 4;

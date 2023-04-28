@@ -1,7 +1,7 @@
 /*
   determine the variant in the main file under CONFIG section:
       side               0    0-(left) || 1-(right)
-      thumb_module        2   0-(buttons) || 1-(joystick+buttons) || 2-(trackball) 
+      thumb_module        0   0-(buttons) || 1-(joystick+buttons) || 2-(trackball) 
       finger_module       0   0-(buttons) || 1-(buttons+wheel) 
       additional_modules  0   0-(none) || 1-(mouse moudule)
 */
