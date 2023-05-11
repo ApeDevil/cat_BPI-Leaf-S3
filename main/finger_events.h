@@ -12,10 +12,10 @@ class BUTTONS_finger {
     const byte inPin_f_count = 4;
     
                             // u1  u2  u3  u4  u5  u6     
-    const byte f_map[4][6] = {{42,  3, 10, 14, 99, 88},   // j1      // button layout for left side
-                              { 6,  2,  9, 13, 17, 88},   // j2 
-                              { 5,  1,  8, 12, 16, 19},   // j3 
-                              { 4,  0,  7, 11, 15, 18}};  // j4      // case 99 will never happen
+    const byte f_map[4][6] = {{ 6,  3, 10, 14, 17, 19},   // j1      // button layout for left side
+                              { 5,  2,  9, 13, 16, 18},   // j2 
+                              { 4,  1,  8, 12, 15, 99},   // j3 
+                              {420,  0,  7, 11, 99, 99}};  // j4      // case 99 will never happen
 
 
     byte fo;
@@ -45,11 +45,11 @@ class BUTTONS_finger {
     
                 if (digitalRead(inPin_f[fi]) == LOW){
                   
-                  Serial.println(map_index);     
-                  Event.actuate(map_index);  //function from events file
+                  // Serial.println(map_index);     
+                  Event.actuate(map_index);  //function from events.h file
                 }
                 else {     
-                  Event.deactuate(map_index);  //function from events file    
+                  Event.deactuate(map_index);  //function from events.h file    
                 }
             }      
         digitalWrite(outPin_f[fo],HIGH);              //setting the Outputpin back to HIGH 

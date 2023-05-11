@@ -1,11 +1,10 @@
 /*
-Version: 1.0.0
-Date: 01.01.2023
+Version: 0.1.0
+Date: 01.04.2023
 Developer: Stanislaw Kirpicnikow (Ape Devil)
 Remark:
 */
 
-//set up the Arduino IDE for Esp32s3: https://learn.adafruit.com/adafruit-qt-py-esp32-s3/arduino-ide-setup-99bba7be-288a-490d-b27b-1e63d17882fc
 
 
 
@@ -26,13 +25,18 @@ Preferences preferences;
 
 
 #include "USB.h"
+
 #include "USBHIDKeyboard.h"
 USBHIDKeyboard Keyboard;
 
-#if additional_modules == 1 || finger_module == 1
-    #include "USBHIDMouse.h"
-    USBHIDMouse Mouse;
-#endif
+#include "USBHIDMouse.h"
+USBHIDMouse Mouse;
+
+
+// #if additional_modules == 1 || finger_module == 1
+//     #include "USBHIDMouse.h"
+//     USBHIDMouse Mouse;
+// #endif
 
 
 
@@ -166,18 +170,27 @@ void loop() {
 //    t = byte(Serialcomm.events_array[0][27][0]);
 //    Serial.println("TEST"); 
 //    Serial.println(t); 
-    Serial.println(layouts_manager.events_array[0][0]);
-    Serial.println(layouts_manager.events_array[0][0]);
+    // Serial.println(layouts_manager.events_array[0][0]);
+    // Serial.println(layouts_manager.events_array[0][0]);
 
-    Serial.print("h ");
-    Serial.print(layouts_manager.mouse_factor[layer_control.active_layer][0]);
-    Serial.print("     v ");
-    Serial.println(layouts_manager.mouse_factor[layer_control.active_layer][1]);    
+    // Serial.print("h ");
+    // Serial.print(layouts_manager.mouse_factor[layer_control.active_layer][0]);
+    // Serial.print("     v ");
+    // Serial.println(layouts_manager.mouse_factor[layer_control.active_layer][1]);    
 
-//    
-//    Serial.println(Serialcomm.mouse_factor[0][1]);
-//    Serial.println(Serialcomm.mouse_factor[1][1]);    
-//    Serial.println(Serialcomm.mouse_factor[2][1]);
-//    Serial.println(Serialcomm.mouse_factor[3][1]);
+    Serial.println("b");
+
+    Keyboard.press(KEY_LEFT_GUI);
+    Keyboard.release(KEY_LEFT_GUI);
+    // Keyboard.press(97);          // press and hold F2
+    delay(1000);
+    Keyboard.releaseAll();
+
+    Serial.println("n");
+   
+  //  Serial.println(layouts_manager.mouse_factor[0][1]);
+  //  Serial.println(layouts_manager.mouse_factor[1][1]);    
+  //  Serial.println(layouts_manager.mouse_factor[2][1]);
+  //  Serial.println(layouts_manager.mouse_factor[3][1]);
   }
 }

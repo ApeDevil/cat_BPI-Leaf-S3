@@ -79,8 +79,8 @@ class Layouts_Manager {
     void mouse_speed(){
       m = 0;
       for (m; m < 4; m++){
-        mouse_factor[m][0] = pow((float(events_array[m][39][0])/100), 2);  // horizontal mouse factor
-        mouse_factor[m][1] = pow((float(events_array[m][40][0])/100), 2);  // vertical mouse factor
+        mouse_factor[m][0] = pow((float(events_array[m][44][0])/100), 2);  // horizontal mouse factor
+        mouse_factor[m][1] = pow((float(events_array[m][45][0])/100), 2);  // vertical mouse factor
       }
     }
 

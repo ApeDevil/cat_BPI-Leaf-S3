@@ -2,9 +2,14 @@ class WHEEL {
 
   private:
   
-    #define encoder_a 21  
-    #define encoder_b 47 
+    #define encoder_a 35    //a2
+    #define encoder_b 36    //a1
+    #define encoder_GND 0   //a3
     
+    #define forward_scroll 41
+    #define backward_scroll 43
+
+
     byte value = 0; 
     byte previous_state;  
     byte state;
@@ -13,6 +18,10 @@ class WHEEL {
   public:
 
     void Setup(){
+
+      pinMode(encoder_GND,OUTPUT);
+      digitalWrite(encoder_GND,LOW);
+
       pinMode (encoder_a,INPUT_PULLUP);
       pinMode (encoder_b,INPUT_PULLUP);
       previous_state = digitalRead(encoder_a);   
@@ -28,15 +37,15 @@ class WHEEL {
            value ++;
            scroll_value = 1;
     //       LeftRight = true;
-            Event.actuate(36);
-            Event.deactuate(36);
+            Event.actuate(forward_scroll);
+            Event.deactuate(forward_scroll);
          } 
          else {                                 //Counterclockwise
     //       LeftRight = false;
            value--;
            scroll_value = -1;
-            Event.actuate(38);
-            Event.deactuate(38);           
+            Event.actuate(backward_scroll);
+            Event.deactuate(backward_scroll);           
          }
     
          Serial.println(value);

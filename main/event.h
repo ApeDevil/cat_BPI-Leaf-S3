@@ -25,17 +25,26 @@ class EVENT {
       if (event_active[event] == false){
 
 //        Serial.println("p");
+        Serial.println(event);  
         
         passing_event = layouts_manager.events_array[layer_control.active_layer][event];
+
+        Serial.println(passing_event); 
         
+
+
         if (passing_event[0] == cat_function){
-//          Serial.println("cat");
+         Serial.println("cat");
           layer_control.switch_layer(passing_event[1]);
         }
+
+
         else if (passing_event[0] == mouse_function){
-//          Serial.println("mouse");
+         Serial.println("mouse");
           mouse_press(passing_event[1]);
         }      
+
+
         else{
             pel = passing_event.length();
             for(k=0; k < pel; k++){ 
@@ -78,10 +87,14 @@ class EVENT {
 
 
     void mouse_press(char m){
-      
+
+        Serial.println("mouse press");
+      Serial.println(m);
+
+
         switch (m) {
           
-          #if mouse_module == true
+          // #if mouse_module == true
           
           case 0xf1:
             Serial.println("left_click");
@@ -99,16 +112,16 @@ class EVENT {
             break;   
             
           case 0xf4:
-            Serial.println("middle_click");
+            Serial.println("mouse_move 1");
             Mouse.move(0, 0, 1);
             break;
             
           case 0xf5:
-            Serial.println("right_click");
+            Serial.println("mouse_move -1");
             Mouse.move(0, 0, -1);
             break;    
 
-          #endif
+          // #endif
           
           default:
             // do nothing
@@ -122,7 +135,7 @@ class EVENT {
       
         switch (m) {
 
-          #if mouse_module == true
+          // #if mouse_module == true
           
           case 0xf1:
             Mouse.release(MOUSE_LEFT);
@@ -136,7 +149,7 @@ class EVENT {
             Mouse.release(MOUSE_RIGHT);
             break;  
             
-          #endif
+          // #endif
           
           default:
             // do nothing

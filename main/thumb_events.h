@@ -7,10 +7,10 @@ class BUTTONS_thumb {
     const byte outPin_count = 3;
     const byte inPin_count = 4;
     
-    const byte t_map[4][3] = {{24,  25,    20},      // thumb buttons layout tor left side
-                              {23,  99,   21},
-                              {19,  22,   15},
-                              {18,  17,   16}};     // case 99 will never happen
+    const byte t_map[4][3] = {{29,  30,    25},      // thumb buttons layout tor left side
+                              {28,  99,   26},
+                              {24,  27,   20},
+                              {23,  22,   21}};     // case 99 will never happen
     byte to;
     byte ti;
     byte map_index;
@@ -39,11 +39,11 @@ class BUTTONS_thumb {
     
                 if (digitalRead(inPin[ti]) == LOW){
                   
-                  Serial.println(map_index);     
-                  Event.actuate(map_index);  //function from events tile
+                  // Serial.println(map_index);     
+                  Event.actuate(map_index);  //function from events.h File
                 }
                 else {     
-                  Event.deactuate(map_index);  //function from events tile    
+                  Event.deactuate(map_index);  //function from events.h File    
                 }
             }      
         digitalWrite(outPin[to],HIGH);              //setting the Outputpin back to HIGH 
