@@ -187,6 +187,9 @@ void loop() {
     Keyboard.releaseAll();
 
     Serial.println("n");
+
+    // new 
+    // new
    
   //  Serial.println(layouts_manager.mouse_factor[0][1]);
   //  Serial.println(layouts_manager.mouse_factor[1][1]);    
