@@ -29,7 +29,7 @@ class EVENT {
         
         passing_event = layouts_manager.events_array[layer_control.active_layer][event];
 
-        Serial.println(passing_event); 
+        // Serial.println(passing_event); /
         
 
 

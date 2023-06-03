@@ -8,7 +8,7 @@ class BUTTONS_thumb {
     const byte inPin_count = 4;
     
     const byte t_map[4][3] = {{29,  30,    25},      // thumb buttons layout tor left side
-                              {28,  99,   26},
+                              {28,  31,   26},
                               {24,  27,   20},
                               {23,  22,   21}};     // case 99 will never happen
     byte to;

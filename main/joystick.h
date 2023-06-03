@@ -5,6 +5,7 @@ class JOYSTICK {
   
     #define pin_jx 18  
     #define pin_jy 8
+    #define pin_v 3
     
     int xVal;
     int yVal;
@@ -30,17 +31,20 @@ class JOYSTICK {
     void Setup(){
         pinMode(pin_jx, INPUT_PULLUP);     
         pinMode(pin_jy, INPUT_PULLUP);  
+        
+        pinMode(pin_v,OUTPUT);
+        digitalWrite(pin_v,HIGH); 
       } 
 
   
     void Loop(){
-//      xVal = analogRead(pin_jx);       //read the analog value, joystick
-//      yVal = analogRead(pin_jy);
-//
-//      Serial.print("x-");
-//      Serial.print(xVal);
-//      Serial.print("    y-");
-//      Serial.println(yVal);  
+    //  xVal = analogRead(pin_jx);       //read the analog value, joystick
+    //  yVal = analogRead(pin_jy);
+
+    //  Serial.print("x-");
+    //  Serial.print(xVal);
+    //  Serial.print("    y-");
+    //  Serial.println(yVal);  
 
       
       if (layouts_manager.events_array[layer_control.active_layer][32][0] == '0'){

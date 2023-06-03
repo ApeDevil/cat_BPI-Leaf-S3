@@ -15,7 +15,7 @@ class BUTTONS_finger {
     const byte f_map[4][6] = {{ 6,  3, 10, 14, 17, 19},   // j1      // button layout for left side
                               { 5,  2,  9, 13, 16, 18},   // j2 
                               { 4,  1,  8, 12, 15, 99},   // j3 
-                              {420,  0,  7, 11, 99, 99}};  // j4      // case 99 will never happen
+                              {42,  0,  7, 11, 99, 99}};  // j4      // case 99 will never happen
 
 
     byte fo;
